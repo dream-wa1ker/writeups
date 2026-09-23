@@ -1,0 +1,39 @@
+---
+layout: default
+---
+{% assign words = content | number_of_words %}
+{% assign minutes = words | divided_by: 200 | plus: 1 %}
+<h1 class="title">{{ page.page_title | default: "NAME" }}</h1>
+<p class="tagline">{{ page.tagline | default: page.title }}</p>
+<div class="post-meta">
+  <span>{{ page.date | date: "%Y-%m-%d" }}</span>
+  <span>~{{ minutes }} min read</span>
+  {% for tag in page.tags %}<a class="tag" href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>{% endfor %}
+</div>
+
+{{ content }}
+
+{% comment %} newer/older computed by position: page.next/previous differ between Jekyll versions {% endcomment %}
+{% for p in site.posts %}{% if p.url == page.url %}{% assign i = forloop.index0 %}{% break %}{% endif %}{% endfor %}
+{% assign k = i | plus: 1 %}{% assign older = site.posts[k] %}
+{% if i > 0 %}{% assign j = i | minus: 1 %}{% assign newer = site.posts[j] %}{% else %}{% assign newer = nil %}{% endif %}
+
+{% assign related = "" | split: "" %}
+{% for p in site.posts %}{% if p.url != page.url %}{% assign shared = p.tags | where_exp: "t", "page.tags contains t" %}{% if shared.size > 0 %}{% assign related = related | push: p %}{% endif %}{% endif %}{% endfor %}
+
+<section>
+  <h2 class="section-label">See also</h2>
+  <div class="see-also">
+    <ul>
+      {% for link in page.see_also %}
+      <li><span class="label">{{ link.label }}</span><a href="{{ link.url }}">{{ link.text }}</a></li>
+      {% endfor %}
+      {% for p in related limit: 3 %}
+      <li><span class="label">related</span><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
+      {% endfor %}
+      {% if newer %}<li><span class="label">newer</span><a href="{{ newer.url | relative_url }}">{{ newer.title }}</a></li>{% endif %}
+      {% if older %}<li><span class="label">older</span><a href="{{ older.url | relative_url }}">{{ older.title }}</a></li>{% endif %}
+      <li><span class="label">all</span><a href="{{ '/' | relative_url }}">back to the log</a></li>
+    </ul>
+  </div>
+</section>

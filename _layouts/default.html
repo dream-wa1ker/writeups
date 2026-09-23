@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include head.html %}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="prompt">$ {{ page.prompt | default: "ls -t writeups/" }}<span class="cursor"></span></div>
+
+  {% include nav.html %}
+  {% include theme-toggle.html %}
+
+  <main class="page" id="main">
+    <div class="bar">
+      <span>{{ page.bar_label | default: "WRITEUPS(1)" }}</span>
+      <span>General Commands Manual</span>
+      <span>{{ page.bar_label | default: "WRITEUPS(1)" }}</span>
+    </div>
+
+    {{ content }}
+
+    <div class="bar footer">
+      <span><a href="https://dream-wa1ker.tech/">DREAM-WA1KER(1)</a></span>
+      <span id="colophon-date"></span>
+      <span><a href="{{ '/feed.xml' | relative_url }}">RSS</a></span>
+    </div>
+  </main>
+
+  <script src="{{ '/js/script.js' | relative_url }}"></script>
+</body>
+</html>

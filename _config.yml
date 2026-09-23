@@ -1,0 +1,25 @@
+title: dream-wa1ker::writeups
+author: dream-wa1ker
+url: "https://blog.dream-wa1ker.tech"
+baseurl: ""
+description: >-
+  Writeups from the wa1kerverse: reverse engineering, exploitation and
+  protocols. Hand written.
+og_image: /assets/preview.png
+# Google Search Console: this is a NEW property (new hostname), so replace with the new token
+google_site_verification: YMBlItzQesKAjM6SOCvZdxJKK7zcefEp-ElVKwNY_S0
+
+permalink: /:title/          # posts live at /<slug>/ ; pages set their own permalink
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+defaults:
+  - scope: { path: "" }
+    values: { layout: "page" }
+  - scope: { path: "", type: "posts" }
+    values: { layout: "post" }
+
+exclude: [Gemfile, Gemfile.lock, README.md, LICENSE, .gitignore]
+plugins: [jekyll-sitemap, jekyll-feed]

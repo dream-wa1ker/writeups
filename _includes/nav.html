@@ -1,0 +1,12 @@
+<button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+  <svg viewBox="0 0 24 24" aria-hidden="true" class="icon i-bars"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+  <svg viewBox="0 0 24 24" aria-hidden="true" class="icon i-close"><path d="M6 6l12 12M18 6L6 18"/></svg>
+</button>
+<div class="nav-overlay" id="nav-overlay"></div>
+<nav class="site-nav" id="site-nav" aria-label="Main">
+  <a href="{{ '/' | relative_url }}"{% if page.nav_id == 'posts' or page.nav_id == 'blog' %} class="current" aria-current="page"{% endif %}>posts(1)</a>
+  <a href="{{ '/archive/' | relative_url }}"{% if page.nav_id == 'archive' %} class="current" aria-current="page"{% endif %}>archive(1)</a>
+  <a href="{{ '/tags/' | relative_url }}"{% if page.nav_id == 'tags' %} class="current" aria-current="page"{% endif %}>tags(1)</a>
+  <a href="{{ '/search/' | relative_url }}"{% if page.nav_id == 'search' %} class="current" aria-current="page"{% endif %}>search(1)</a>
+  <a href="https://dream-wa1ker.tech/">site(1) &#8599;</a>
+</nav>
