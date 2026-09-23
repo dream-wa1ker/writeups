@@ -21,5 +21,5 @@ defaults:
   - scope: { path: "", type: "posts" }
     values: { layout: "post" }
 
-exclude: [Gemfile, Gemfile.lock, README.md, LICENSE, .gitignore]
+exclude: [Gemfile, Gemfile.lock, README.md, LICENSE, .gitignore, vendor]
 plugins: [jekyll-sitemap, jekyll-feed]
