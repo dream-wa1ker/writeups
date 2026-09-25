@@ -2,13 +2,13 @@
 layout: page
 permalink: /
 nav_id: posts
-title: writeups(1)
+title: Blog
 prompt: ls -t writeups/
 bar_label: WRITEUPS(1)
 page_title: NAME
 tagline: "writeups - reverse engineering, exploitation and protocols, written by hand"
 description: >-
-  Hand-written writeups: reverse engineering, exploitation and protocols.
+  Hand-written writeups: reverse engineering, exploitation and protocols, and random learning process that I feel nice to share.
 ---
 <section>
   <h2 class="section-label">Entries</h2>
