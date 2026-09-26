@@ -287,7 +287,7 @@ h2.section-label {
 
 .see-also ul { list-style: none; padding: 0; margin: 0; }
 .see-also li { padding: 0.5rem 0; }
-.see-also li + li { border-top: 1px solid var(--rule); }
+.see-also li + li { border: none; }
 .see-also .label { color: var(--paper-dim); display: inline-block; width: 6.5rem; }
 .see-also .v { color: var(--paper); }
 
@@ -309,7 +309,8 @@ h2.section-label {
   border: none;
 }
 .log-entry + .log-entry { border-top: 1px solid var(--rule); }
-.log-entry:hover, .log-entry:focus-visible { background: var(--ink-2); border-bottom: none; }
+#results .log-entry + .log-entry { border-top: none; }
+.log-entry:hover, .log-entry:focus-visible { background: none; border-bottom: none; }
 .log-date { display: block; font-size: 0.72rem; color: var(--paper-dim); letter-spacing: 0.04em; }
 .log-title { display: block; font-size: 0.98rem; color: var(--paper); margin: 0.15rem 0 0.25rem; }
 .log-entry:hover .log-title, .log-entry:focus-visible .log-title { color: var(--accent); }
