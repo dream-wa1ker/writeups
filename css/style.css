@@ -277,11 +277,14 @@ h2.section-label {
 .see-also, .kv {
   font-family: var(--mono);
   font-size: 0.92rem;
+  padding: 0.4rem 1rem;
+}
+.kv {
   background: var(--ink-1);
   border: 1px solid var(--rule);
   border-radius: 4px;
-  padding: 0.4rem 1rem;
 }
+
 .see-also ul { list-style: none; padding: 0; margin: 0; }
 .see-also li { padding: 0.5rem 0; }
 .see-also li + li { border-top: 1px solid var(--rule); }
@@ -298,9 +301,6 @@ h2.section-label {
 /* ---- blog listing ---- */
 .log-list {
   font-family: var(--mono);
-  background: var(--ink-1);
-  border: 1px solid var(--rule);
-  border-radius: 4px;
 }
 .log-entry {
   display: block;
