@@ -309,7 +309,6 @@ h2.section-label {
   border: none;
 }
 .log-entry + .log-entry { border-top: 1px solid var(--rule); }
-#results .log-entry + .log-entry { border-top: none; }
 .log-entry:hover, .log-entry:focus-visible { background: none; border-bottom: none; }
 .log-date { display: block; font-size: 0.72rem; color: var(--paper-dim); letter-spacing: 0.04em; }
 .log-title { display: block; font-size: 0.98rem; color: var(--paper); margin: 0.15rem 0 0.25rem; }
