@@ -273,21 +273,15 @@ h2.section-label {
   border-radius: 0 4px 4px 0;
 }
 
-/* panels: see-also / kv now sit on their own elevation instead of bare text */
+/* panels: see-also / kv — flush text, no card, no dividers (used by per-post "see also", archive, and tags pages) */
 .see-also, .kv {
   font-family: var(--mono);
   font-size: 0.92rem;
-  padding: 0.4rem 1rem;
+  padding: 0.4rem 0;
 }
-.kv {
-  background: var(--ink-1);
-  border: 1px solid var(--rule);
-  border-radius: 4px;
-}
-
 .see-also ul { list-style: none; padding: 0; margin: 0; }
 .see-also li { padding: 0.5rem 0; }
-.see-also li + li { border: none; }
+.see-also li + li { border-top: none; }
 .see-also .label { color: var(--paper-dim); display: inline-block; width: 6.5rem; }
 .see-also .v { color: var(--paper); }
 
@@ -304,12 +298,14 @@ h2.section-label {
 }
 .log-entry {
   display: block;
-  padding: 0.9rem 1rem;
+  padding: 0.9rem 0;
   color: var(--paper);
   border: none;
 }
 .log-entry + .log-entry { border-top: 1px solid var(--rule); }
 .log-entry:hover, .log-entry:focus-visible { background: none; border-bottom: none; }
+/* search results reuse .log-list/.log-entry but shouldn't show dividers between hits */
+#results .log-entry + .log-entry { border-top: none; }
 .log-date { display: block; font-size: 0.72rem; color: var(--paper-dim); letter-spacing: 0.04em; }
 .log-title { display: block; font-size: 0.98rem; color: var(--paper); margin: 0.15rem 0 0.25rem; }
 .log-entry:hover .log-title, .log-entry:focus-visible .log-title { color: var(--accent); }
@@ -460,7 +456,7 @@ h2.section-label {
 }
 
 .description tbody tr:hover {
-  background: var(--ink-2);
+  background: none;
 }
 
 /* inline code inside cells — reuse the innermost elevation, same as .description code elsewhere */
@@ -514,12 +510,11 @@ h2.section-label {
 .log-title { border: none; }
 .log-title:hover, .log-title:focus-visible { color: var(--accent); border: none; }
 .tag-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
-.tag-chip { display: inline-block; font-family: var(--mono); font-size: 0.72rem; padding: 0.12rem 0.5rem; background: var(--ink-2); border: 1px solid var(--rule); border-radius: 3px; color: var(--paper-dim); }
-.tag-chip:hover, .tag-chip:focus-visible, .tag-chip.is-active { color: var(--accent); border-color: var(--accent); }
+.tag-chip { display: inline-block; font-family: var(--mono); font-size: 0.72rem; padding: 0.12rem 0; color: var(--paper-dim); }
+.tag-chip:hover, .tag-chip:focus-visible, .tag-chip.is-active { color: var(--accent); }
 .tag-chip .n { margin-left: 0.4rem; opacity: 0.7; }
 .tag-chip[hidden], .tag-group[hidden], [hidden] { display: none !important; }
-.post-meta a.tag { border: 1px solid var(--rule); }
-.post-meta a.tag:hover { color: var(--accent); border-color: var(--accent); }
+.post-meta a.tag:hover { color: var(--accent); }
 
 .search-box input { width: 100%; background: var(--ink-1); border: 1px solid var(--rule); border-radius: 4px; color: var(--paper); font-family: var(--mono); font-size: 0.95rem; padding: 0.7rem 0.9rem; }
 .search-box input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
