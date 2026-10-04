@@ -8,7 +8,6 @@ bar_label: BLOG(1)
 page_title: NAME
 tagline: "attack: stimulating arp cache poisioning attack"
 description: >-
-  This is the first public exploitation that I am performing, because I know that this exploit exists, and know its targets. It is one of the many recent linux LPE exploits that were discovered in 2026 - CVE-2026-31431. This blog is about a complete writeup on how and why this exploit works, everything that's behind it.
   This is a detailed walkthrough on how, one can easily perform an ARP Cache Poisoning or ARP Spoofing Attack, in order to establish themselves in a position of Man In The Middle (MITM). I also wrote about ARP / Address Resolution Protocol, why it exists and details about it.
 tags: [attack, mitm, arp-spoofing, cybersec]
 see_also:
